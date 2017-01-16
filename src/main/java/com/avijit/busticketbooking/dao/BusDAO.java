@@ -29,43 +29,45 @@ public class BusDAO implements IBusDAO {
 	 * @see com.avijit.busreservation.dao.IBusDAO#addBus(com.avijit.busreservation.model.Bus)
 	 */
 	@Override
-	public void addBus(Bus bus) {
+	public boolean addBus(Bus bus) {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.getCurrentSession();
 		session.save(bus);
+		return true;
 	}
 
 	/* (non-Javadoc)
-	 * @see com.avijit.busreservation.dao.IBusDAO#listBuses()
+	 * @see com.avijit.busreservation.dao.IBusDAO#getBus(int)
 	 */
 	@Override
-	public List<Bus> listBuses() {
+	public Bus getBus(int busID) {
 		// TODO Auto-generated method stub
 		@SuppressWarnings("unchecked")
 		List<Bus> listBus = (List<Bus>) sessionFactory.getCurrentSession()
 				.createCriteria(Bus.class)
 				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
 
-		return listBus;
+		return listBus.get(0);
 	}
 
 	/* (non-Javadoc)
 	 * @see com.avijit.busreservation.dao.IBusDAO#updateBus(com.avijit.busreservation.model.Bus)
 	 */
 	@Override
-	public void updateBus(Bus bus) {
+	public boolean updateBus(Bus bus) {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.getCurrentSession();
 		session.saveOrUpdate(bus);
+		return true;
 	}
 
 	/* (non-Javadoc)
 	 * @see com.avijit.busreservation.dao.IBusDAO#deleteBus(int)
 	 */
 	@Override
-	public void deleteBus(int id) {
+	public boolean deleteBus(int busID) {
 		// TODO Auto-generated method stub
-
+		return false;
 	}
 
 }

@@ -3,8 +3,6 @@
  */
 package com.avijit.busticketbooking.dao;
 
-import java.util.List;
-
 import org.springframework.transaction.annotation.Transactional;
 
 import com.avijit.busticketbooking.model.Bus;
@@ -14,19 +12,36 @@ import com.avijit.busticketbooking.model.Bus;
  *
  */
 public interface IBusDAO {
-	// Create
-	@Transactional
-	public void addBus(Bus bus);
 
-	// Read
+	/**
+	 * 
+	 * @param bus
+	 * @return
+	 */
 	@Transactional
-	public List<Bus> listBuses();
+	public boolean addBus(Bus bus);
 
-	// Update
+	/**
+	 * 
+	 * @param busID
+	 * @return
+	 */
 	@Transactional
-	public void updateBus(Bus bus);
+	public Bus getBus(int busID);
 
-	// Delete
+	/**
+	 * 
+	 * @param bus
+	 * @return
+	 */
 	@Transactional
-	public void deleteBus(int id);
+	public boolean updateBus(Bus bus);
+
+	/**
+	 * 
+	 * @param busID
+	 * @return
+	 */
+	@Transactional
+	public boolean deleteBus(int busID);
 }
