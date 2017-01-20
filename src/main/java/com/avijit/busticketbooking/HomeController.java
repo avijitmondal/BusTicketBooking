@@ -38,12 +38,13 @@ public class HomeController {
 		
 //		List<Bus> listUsers = iBusDao.listBuses();
 //		System.out.println(listUsers);
-		Bus bus = new Bus();
+/*		Bus bus = new Bus();
 		bus.setBusNumber("jgkjgfkg");
 		bus.setCapacity(30);
-		iBusDao.addBus(bus);
+		iBusDao.addBus(bus);*/
+		
 		//List<Route> list = iRouteDAO.findAllRoutes();
-		//System.out.println(list.isEmpty());
+		//System.out.println(list);
 		return "home";
 	}
 

@@ -9,11 +9,10 @@
 		</id>
 		<property name="origin" column="ORIGIN" />
 		<property name="destiny" column="DESTINY" />
-		<list name="timeTable" cascade="all" table="Timetable">
+		<bag name="timeTable" cascade="all" table="Timetable">
             <key column="ROUTE_ID"/>
-            <list-index column="TIMETABLE_ID" />
             <one-to-many class="com.avijit.busreservation.model.TimeTable" />
-        </list>
+        </bag>
 		
 	</class>
 </hibernate-mapping>

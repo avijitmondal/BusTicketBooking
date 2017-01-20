@@ -12,11 +12,10 @@
 		<property name="arrivalTime" column="ARRIVALTIME" />
 		<property name="available" column="AVAILABLE" type="integer" />
 		<property name="busID" column="BUSID" type="integer" />
-		<list name="midway" cascade="all" table="Timetable">
+		<bag name="midway" cascade="all" table="Midway">
             <key column="TIMETABLE_ID"/>
-            <list-index column="MIDWAY_ID" />
-            <one-to-many class="com.avijit.busreservation.model.TimeTable" />
-        </list>
+            <one-to-many class="com.avijit.busreservation.model.Midway" />
+        </bag>
 		
 	</class>
 </hibernate-mapping>
