@@ -43,5 +43,5 @@ public interface IFareDAO {
 	 * @return
 	 */
 	@Transactional
-	public boolean deleteFate(int fareID);
+	public boolean deleteFare(int fareID);
 }

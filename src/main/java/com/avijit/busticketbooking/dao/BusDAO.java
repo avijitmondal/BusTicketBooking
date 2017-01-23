@@ -3,21 +3,18 @@
  */
 package com.avijit.busticketbooking.dao;
 
-import java.util.List;
-
-import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import com.avijit.busticketbooking.model.Bus;
 
 /**
- * @author AVI
+ * @author avijit
  *
  */
 public class BusDAO implements IBusDAO {
 	private SessionFactory sessionFactory;
-	
+
 	/**
 	 * @param sessionFactory
 	 */
@@ -25,49 +22,65 @@ public class BusDAO implements IBusDAO {
 		this.sessionFactory = sessionFactory;
 	}
 
-	/* (non-Javadoc)
-	 * @see com.avijit.busreservation.dao.IBusDAO#addBus(com.avijit.busreservation.model.Bus)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * com.avijit.busreservation.dao.IBusDAO#addBus(com.avijit.busreservation.
+	 * model.Bus)
 	 */
 	@Override
 	public boolean addBus(Bus bus) {
-		// TODO Auto-generated method stub
 		Session session = sessionFactory.getCurrentSession();
 		session.save(bus);
 		return true;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see com.avijit.busreservation.dao.IBusDAO#getBus(int)
 	 */
 	@Override
 	public Bus getBus(int busID) {
-		// TODO Auto-generated method stub
-		@SuppressWarnings("unchecked")
-		List<Bus> listBus = (List<Bus>) sessionFactory.getCurrentSession()
-				.createCriteria(Bus.class)
-				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
-
-		return listBus.get(0);
+		Session session = sessionFactory.getCurrentSession();
+		return (Bus) session.get(Bus.class, busID);
 	}
 
-	/* (non-Javadoc)
-	 * @see com.avijit.busreservation.dao.IBusDAO#updateBus(com.avijit.busreservation.model.Bus)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * com.avijit.busreservation.dao.IBusDAO#updateBus(com.avijit.busreservation
+	 * .model.Bus)
 	 */
 	@Override
 	public boolean updateBus(Bus bus) {
-		// TODO Auto-generated method stub
 		Session session = sessionFactory.getCurrentSession();
-		session.saveOrUpdate(bus);
+		Bus tempBus = (Bus) session.get(Bus.class, bus.getId());
+		if (tempBus == null)
+			return false;
+
+		tempBus.setBusNumber(bus.getBusNumber());
+		tempBus.setCapacity(bus.getCapacity());
+		session.update(tempBus);
 		return true;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see com.avijit.busreservation.dao.IBusDAO#deleteBus(int)
 	 */
 	@Override
 	public boolean deleteBus(int busID) {
-		// TODO Auto-generated method stub
-		return false;
+		Session session = sessionFactory.getCurrentSession();
+		Bus bus = (Bus) session.get(Bus.class, busID);
+		if (bus == null)
+			return false;
+		
+		session.delete(bus);
+		return true;
 	}
 
 }
