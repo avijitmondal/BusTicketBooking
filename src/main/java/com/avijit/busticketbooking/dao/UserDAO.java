@@ -3,6 +3,8 @@
  */
 package com.avijit.busticketbooking.dao;
 
+import org.hibernate.SessionFactory;
+
 import com.avijit.busticketbooking.model.User;
 
 /**
@@ -10,9 +12,20 @@ import com.avijit.busticketbooking.model.User;
  *
  */
 public class UserDAO implements IUserDAO {
-	
-	/* (non-Javadoc)
-	 * @see com.avijit.busticketbooking.dao.IUserDAO#addUser(com.avijit.busticketbooking.model.User)
+	private SessionFactory sessionFactory;
+
+	/**
+	 * @param sessionFactory
+	 */
+	public UserDAO(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.avijit.busticketbooking.dao.IUserDAO#addUser(com.avijit.
+	 * busticketbooking.model.User)
 	 */
 	@Override
 	public boolean addUser(User user) {
@@ -20,7 +33,9 @@ public class UserDAO implements IUserDAO {
 		return false;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see com.avijit.busticketbooking.dao.IUserDAO#getUser(int)
 	 */
 	@Override
@@ -29,8 +44,11 @@ public class UserDAO implements IUserDAO {
 		return null;
 	}
 
-	/* (non-Javadoc)
-	 * @see com.avijit.busticketbooking.dao.IUserDAO#updateUser(com.avijit.busticketbooking.model.User)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.avijit.busticketbooking.dao.IUserDAO#updateUser(com.avijit.
+	 * busticketbooking.model.User)
 	 */
 	@Override
 	public boolean updateUser(User user) {
@@ -38,7 +56,9 @@ public class UserDAO implements IUserDAO {
 		return false;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see com.avijit.busticketbooking.dao.IUserDAO#deleteUser(int)
 	 */
 	@Override

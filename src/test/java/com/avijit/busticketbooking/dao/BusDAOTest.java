@@ -68,14 +68,15 @@ public class BusDAOTest {
 	public void testAddBus() {
 		bus.setBusNumber("WB 06 0 0000");
 		bus.setCapacity(54);
-		boolean result = iBusDAO.addBus(bus);
-		assertEquals(true, result);
+		int result = iBusDAO.addBus(bus);
+		assertNotEquals(-1, result);
 	}
 
 	/**
 	 * Test method for
 	 * {@link com.avijit.busticketbooking.dao.BusDAO#getBus(int)}.
 	 */
+	@Ignore
 	@Test
 	public void testGetBus() {
 		bus = iBusDAO.getBus(51);

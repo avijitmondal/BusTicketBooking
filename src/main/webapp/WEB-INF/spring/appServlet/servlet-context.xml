@@ -54,7 +54,26 @@
 			<ref bean="sessionFactory" />
 		</constructor-arg>
 	</bean>
-		<bean id="iRouteDAO" class="com.avijit.busticketbooking.dao.RouteDAO">
+
+	<bean id="iFareDAO" class="com.avijit.busticketbooking.dao.FareDAO">
+		<constructor-arg>
+			<ref bean="sessionFactory" />
+		</constructor-arg>
+	</bean>
+
+	<bean id="iStopDAO" class="com.avijit.busticketbooking.dao.StopDAO">
+		<constructor-arg>
+			<ref bean="sessionFactory" />
+		</constructor-arg>
+	</bean>
+
+	<bean id="iUserDAO" class="com.avijit.busticketbooking.dao.UserDAO">
+		<constructor-arg>
+			<ref bean="sessionFactory" />
+		</constructor-arg>
+	</bean>
+
+	<bean id="iRouteDAO" class="com.avijit.busticketbooking.dao.RouteDAO">
 		<constructor-arg>
 			<ref bean="sessionFactory" />
 		</constructor-arg>

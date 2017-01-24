@@ -30,10 +30,9 @@ public class BusDAO implements IBusDAO {
 	 * model.Bus)
 	 */
 	@Override
-	public boolean addBus(Bus bus) {
+	public int addBus(Bus bus) {
 		Session session = sessionFactory.getCurrentSession();
-		session.save(bus);
-		return true;
+		return (Integer) session.save(bus);
 	}
 
 	/*
@@ -78,7 +77,7 @@ public class BusDAO implements IBusDAO {
 		Bus bus = (Bus) session.get(Bus.class, busID);
 		if (bus == null)
 			return false;
-		
+
 		session.delete(bus);
 		return true;
 	}

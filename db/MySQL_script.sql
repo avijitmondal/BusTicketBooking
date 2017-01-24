@@ -1,10 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `busticket` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `busticket`;
--- MySQL dump 10.13  Distrib 5.5.16, for Win32 (x86)
+-- MySQL dump 10.13  Distrib 5.7.12, for Win64 (x86_64)
 --
 -- Host: localhost    Database: busticket
 -- ------------------------------------------------------
--- Server version	5.5.28
+-- Server version	5.7.16-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -29,7 +27,7 @@ CREATE TABLE `bus` (
   `busnumber` varchar(15) DEFAULT NULL,
   `capacity` int(2) DEFAULT NULL,
   PRIMARY KEY (`bus_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='Contains information for a single bus';
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8 COMMENT='Contains information for a single bus';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +36,7 @@ CREATE TABLE `bus` (
 
 LOCK TABLES `bus` WRITE;
 /*!40000 ALTER TABLE `bus` DISABLE KEYS */;
-INSERT INTO `bus` VALUES (1,'123',34),(3,'jgkjgfkg',30);
+INSERT INTO `bus` VALUES (1,'123',34),(51,'WB 01 1 1111',36);
 /*!40000 ALTER TABLE `bus` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -59,7 +57,7 @@ CREATE TABLE `fare` (
   KEY `tostopid` (`tostopid`),
   CONSTRAINT `fare_ibfk_1` FOREIGN KEY (`fromstopid`) REFERENCES `stop` (`stop_id`),
   CONSTRAINT `fare_ibfk_2` FOREIGN KEY (`tostopid`) REFERENCES `stop` (`stop_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='contains fare to go a stop';
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8 COMMENT='contains fare to go a stop';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,6 +66,7 @@ CREATE TABLE `fare` (
 
 LOCK TABLES `fare` WRITE;
 /*!40000 ALTER TABLE `fare` DISABLE KEYS */;
+INSERT INTO `fare` VALUES (1,1,2,5),(2,1,3,5),(3,1,4,5),(4,1,5,5),(5,2,3,5),(6,2,4,5),(7,2,5,5),(8,2,6,5),(9,3,4,5),(10,3,5,5),(11,3,6,5),(12,3,7,5),(13,4,5,5),(14,4,6,5),(15,4,7,5),(16,4,8,5),(17,5,6,5),(18,5,7,5),(19,5,8,5),(20,5,9,5),(21,6,7,5),(22,6,8,5),(23,6,9,5);
 /*!40000 ALTER TABLE `fare` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -100,7 +99,7 @@ CREATE TABLE `midway` (
 
 LOCK TABLES `midway` WRITE;
 /*!40000 ALTER TABLE `midway` DISABLE KEYS */;
-INSERT INTO `midway` VALUES (1,2,1,4,'2016-12-13 18:30:00');
+INSERT INTO `midway` VALUES (1,2,1,4,'2017-01-03 18:30:00');
 /*!40000 ALTER TABLE `midway` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -259,4 +258,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-19 14:31:43
+-- Dump completed on 2017-01-24 23:39:57

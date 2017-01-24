@@ -29,10 +29,9 @@ public class FareDAO implements IFareDAO {
 	 * busticketbooking.model.Fare)
 	 */
 	@Override
-	public boolean addFare(Fare fare) {
+	public int addFare(Fare fare) {
 		Session session = sessionFactory.getCurrentSession();
-		session.save(fare);
-		return true;
+		return (Integer) session.save(fare);
 	}
 
 	/*

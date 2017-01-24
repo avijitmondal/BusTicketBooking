@@ -16,15 +16,15 @@ public interface IFareDAO {
 	/**
 	 * 
 	 * @param fare
-	 * @return
+	 * @return fareID
 	 */
 	@Transactional
-	public boolean addFare(Fare fare);
+	public int addFare(Fare fare);
 	
 	/**
 	 * 
 	 * @param fareID
-	 * @return
+	 * @return Fare
 	 */
 	@Transactional
 	public Fare getFare(int fareID);

@@ -7,8 +7,9 @@
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 		<property name="show_sql">true</property>
 		<mapping resource="com/avijit/busticketbooking/model/Bus.hbm.xml" />
-		<mapping resource="com/avijit/busticketbooking/model/User.hbm.xml" />
 		<mapping resource="com/avijit/busticketbooking/model/Fare.hbm.xml" />
+		<mapping resource="com/avijit/busticketbooking/model/Stop.hbm.xml" />
+		<mapping resource="com/avijit/busticketbooking/model/User.hbm.xml" />
 		<!--<mapping resource="com/avijit/busticketbooking/model/Midway.hbm.xml" />
 		<mapping resource="com/avijit/busticketbooking/model/Route.hbm.xml" />
 		<mapping resource="com/avijit/busticketbooking/model/TimeTable.hbm.xml" />-->

@@ -9,13 +9,26 @@ import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import com.avijit.busticketbooking.model.Stop;
 
 /**
  * @author AVI
  *
  */
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = "file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml")
 public class StopDAOTest {
+	
+	@Autowired
+	IStopDAO iStopDAO;
+	Stop stop;
 
 	/**
 	 * @throws java.lang.Exception
@@ -36,6 +49,7 @@ public class StopDAOTest {
 	 */
 	@Before
 	public void setUp() throws Exception {
+		stop = new Stop();
 	}
 
 	/**
@@ -46,35 +60,49 @@ public class StopDAOTest {
 	}
 
 	/**
-	 * Test method for {@link com.avijit.busticketbooking.dao.StopDAO#addStop(com.avijit.busticketbooking.model.Stop)}.
+	 * Test method for
+	 * {@link com.avijit.busticketbooking.dao.StopDAO#addStop(com.avijit.busticketbooking.model.Stop)}.
 	 */
 	@Test
 	public void testAddStop() {
-		fail("Not yet implemented");
+		stop.setName("Dhanbad");
+		int result = iStopDAO.addStop(stop);
+		assertEquals(-1, result);
 	}
 
 	/**
-	 * Test method for {@link com.avijit.busticketbooking.dao.StopDAO#getStop(int)}.
+	 * Test method for
+	 * {@link com.avijit.busticketbooking.dao.StopDAO#getStop(int)}.
 	 */
+	@Ignore
 	@Test
 	public void testGetStop() {
-		fail("Not yet implemented");
+		stop = iStopDAO.getStop(51);
+		assertEquals(null, stop);
 	}
 
 	/**
-	 * Test method for {@link com.avijit.busticketbooking.dao.StopDAO#updateStop(com.avijit.busticketbooking.model.Stop)}.
+	 * Test method for
+	 * {@link com.avijit.busticketbooking.dao.StopDAO#updateStop(com.avijit.busticketbooking.model.Stop)}.
 	 */
+	@Ignore
 	@Test
 	public void testUpdateStop() {
-		fail("Not yet implemented");
+		stop.setName("Asansol");
+		stop.setId(20);
+		boolean result = iStopDAO.updateStop(stop);
+		assertEquals(true, result);
 	}
 
 	/**
-	 * Test method for {@link com.avijit.busticketbooking.dao.StopDAO#deleteStop(int)}.
+	 * Test method for
+	 * {@link com.avijit.busticketbooking.dao.StopDAO#deleteStop(int)}.
 	 */
+	@Ignore
 	@Test
 	public void testDeleteStop() {
-		fail("Not yet implemented");
+		boolean result = iStopDAO.deleteStop(50);
+		assertEquals(true, result);
 	}
 
 }

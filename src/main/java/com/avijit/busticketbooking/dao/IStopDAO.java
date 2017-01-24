@@ -16,15 +16,15 @@ public interface IStopDAO {
 	/**
 	 * 
 	 * @param stop
-	 * @return
+	 * @return int
 	 */
 	@Transactional
-	public boolean addStop(Stop stop);
+	public int addStop(Stop stop);
 	
 	/**
 	 * 
 	 * @param stopID
-	 * @return
+	 * @return Stop
 	 */
 	@Transactional
 	public Stop getStop(int stopID);
@@ -32,7 +32,7 @@ public interface IStopDAO {
 	/**
 	 * 
 	 * @param stop
-	 * @return
+	 * @return boolean
 	 */
 	@Transactional
 	public boolean updateStop(Stop stop);
@@ -40,7 +40,7 @@ public interface IStopDAO {
 	/**
 	 * 
 	 * @param stopID
-	 * @return
+	 * @return boolean
 	 */
 	@Transactional
 	public boolean deleteStop(int stopID);

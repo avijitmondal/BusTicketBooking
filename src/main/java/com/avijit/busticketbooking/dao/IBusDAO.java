@@ -16,15 +16,15 @@ public interface IBusDAO {
 	/**
 	 * 
 	 * @param bus
-	 * @return
+	 * @return int
 	 */
 	@Transactional
-	public boolean addBus(Bus bus);
+	public int addBus(Bus bus);
 
 	/**
 	 * 
 	 * @param busID
-	 * @return
+	 * @return Bus
 	 */
 	@Transactional
 	public Bus getBus(int busID);
@@ -32,7 +32,7 @@ public interface IBusDAO {
 	/**
 	 * 
 	 * @param bus
-	 * @return
+	 * @return boolean
 	 */
 	@Transactional
 	public boolean updateBus(Bus bus);
@@ -40,7 +40,7 @@ public interface IBusDAO {
 	/**
 	 * 
 	 * @param busID
-	 * @return
+	 * @return boolean
 	 */
 	@Transactional
 	public boolean deleteBus(int busID);
