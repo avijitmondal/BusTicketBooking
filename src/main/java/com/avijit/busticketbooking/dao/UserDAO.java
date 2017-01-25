@@ -3,6 +3,7 @@
  */
 package com.avijit.busticketbooking.dao;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import com.avijit.busticketbooking.model.User;
@@ -28,9 +29,9 @@ public class UserDAO implements IUserDAO {
 	 * busticketbooking.model.User)
 	 */
 	@Override
-	public boolean addUser(User user) {
-		// TODO Auto-generated method stub
-		return false;
+	public int addUser(User user) {
+		Session session = sessionFactory.getCurrentSession();
+		return (Integer) session.save(user);
 	}
 
 	/*
@@ -40,8 +41,8 @@ public class UserDAO implements IUserDAO {
 	 */
 	@Override
 	public User getUser(int userID) {
-		// TODO Auto-generated method stub
-		return null;
+		Session session = sessionFactory.getCurrentSession();
+		return (User) session.get(User.class, userID);
 	}
 
 	/*
@@ -52,8 +53,19 @@ public class UserDAO implements IUserDAO {
 	 */
 	@Override
 	public boolean updateUser(User user) {
-		// TODO Auto-generated method stub
-		return false;
+		Session session = sessionFactory.getCurrentSession();
+		User tempUser = (User) session.get(User.class, user.getId());
+		if (tempUser == null)
+			return false;
+		
+		tempUser.setName(user.getName());
+		tempUser.setEmail(user.getEmail());
+		tempUser.setMobile(user.getMobile());
+		tempUser.setPassword(user.getPassword());
+		tempUser.setSex(user.getSex());
+		tempUser.setUsername(user.getUsername());
+		session.update(tempUser);
+		return true;
 	}
 
 	/*
@@ -63,8 +75,13 @@ public class UserDAO implements IUserDAO {
 	 */
 	@Override
 	public boolean deleteUser(int userID) {
-		// TODO Auto-generated method stub
-		return false;
+		Session session = sessionFactory.getCurrentSession();
+		User user = (User) session.get(User.class, userID);
+		if (user == null)
+			return false;
+
+		session.delete(user);
+		return true;
 	}
 
 }

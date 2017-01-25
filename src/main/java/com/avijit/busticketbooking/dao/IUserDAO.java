@@ -16,15 +16,15 @@ public interface IUserDAO {
 	/**
 	 * 
 	 * @param user
-	 * @return
+	 * @return int
 	 */
 	@Transactional
-	public boolean addUser(User user);
+	public int addUser(User user);
 	
 	/**
 	 * 
 	 * @param userID
-	 * @return
+	 * @return User
 	 */
 	@Transactional
 	public User getUser(int userID);
@@ -32,7 +32,7 @@ public interface IUserDAO {
 	/**
 	 * 
 	 * @param user
-	 * @return
+	 * @return boolean
 	 */
 	@Transactional
 	public boolean updateUser(User user);
@@ -40,7 +40,7 @@ public interface IUserDAO {
 	/**
 	 * 
 	 * @param userID
-	 * @return
+	 * @return boolean
 	 */
 	@Transactional
 	public boolean deleteUser(int userID);

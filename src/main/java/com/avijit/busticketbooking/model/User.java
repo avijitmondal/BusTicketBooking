@@ -14,7 +14,7 @@ public class User {
 	private String name;
 	private String sex;
 	private String email;
-	private int mobile;
+	private String mobile;
 	/**
 	 * 
 	 */
@@ -29,7 +29,7 @@ public class User {
 	 * @param email
 	 * @param mobile
 	 */
-	public User(int id, String username, String password, String name, String sex, String email, int mobile) {
+	public User(int id, String username, String password, String name, String sex, String email, String mobile) {
 		this.id = id;
 		this.username = username;
 		this.password = password;
@@ -113,13 +113,13 @@ public class User {
 	/**
 	 * @return the mobile
 	 */
-	public int getMobile() {
+	public String getMobile() {
 		return mobile;
 	}
 	/**
 	 * @param mobile the mobile to set
 	 */
-	public void setMobile(int mobile) {
+	public void setMobile(String mobile) {
 		this.mobile = mobile;
 	}
 	

@@ -63,11 +63,12 @@ public class StopDAOTest {
 	 * Test method for
 	 * {@link com.avijit.busticketbooking.dao.StopDAO#addStop(com.avijit.busticketbooking.model.Stop)}.
 	 */
+	@Ignore
 	@Test
 	public void testAddStop() {
 		stop.setName("Dhanbad");
 		int result = iStopDAO.addStop(stop);
-		assertEquals(-1, result);
+		assertNotEquals(-1, result);
 	}
 
 	/**
@@ -78,7 +79,7 @@ public class StopDAOTest {
 	@Test
 	public void testGetStop() {
 		stop = iStopDAO.getStop(51);
-		assertEquals(null, stop);
+		assertNotEquals(null, stop);
 	}
 
 	/**
@@ -101,7 +102,7 @@ public class StopDAOTest {
 	@Ignore
 	@Test
 	public void testDeleteStop() {
-		boolean result = iStopDAO.deleteStop(50);
+		boolean result = iStopDAO.deleteStop(69);
 		assertEquals(true, result);
 	}
 

@@ -7,11 +7,11 @@
 		<id name="id" column="USER_ID">
 			<generator class="native" />
 		</id>
-		<property name="username" column="USERNAME" />
-		<property name="password" column="PASSWORD" />
-		<property name="name" column="NAME" />
+		<property name="username" column="USERNAME" type="string" />
+		<property name="password" column="PASSWORD" type="string" />
+		<property name="name" column="NAME" type="string" />
 		<property name="sex" column="SEX" type="character" />
-		<property name="email" column="EMAIL" />
-		<property name="mobile" column="MOBILE" type="integer" />
+		<property name="email" column="EMAIL" type="string" />
+		<property name="mobile" column="MOBILE" type="sring" />
 	</class>
 </hibernate-mapping>

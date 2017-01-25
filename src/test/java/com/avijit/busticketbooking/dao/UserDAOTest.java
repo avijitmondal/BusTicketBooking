@@ -10,12 +10,24 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import com.avijit.busticketbooking.model.User;
 
 /**
  * @author AVI
  *
  */
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = "file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml")
 public class UserDAOTest {
+
+	@Autowired
+	IUserDAO iUserDAO;
+	User user;
 
 	/**
 	 * @throws java.lang.Exception
@@ -36,6 +48,7 @@ public class UserDAOTest {
 	 */
 	@Before
 	public void setUp() throws Exception {
+		user = new User();
 	}
 
 	/**
@@ -46,35 +59,50 @@ public class UserDAOTest {
 	}
 
 	/**
-	 * Test method for {@link com.avijit.busticketbooking.dao.UserDAO#addUser(com.avijit.busticketbooking.model.User)}.
+	 * Test method for
+	 * {@link com.avijit.busticketbooking.dao.UserDAO#addUser(com.avijit.busticketbooking.model.User)}.
 	 */
 	@Test
 	public void testAddUser() {
-		fail("Not yet implemented");
+		user.setName("Avijit Mondal");
+		user.setEmail("avijit.mondal@rebaca.com");
+		user.setPassword("admin");
+		user.setSex("M");
+		user.setMobile("9564951393");
+		int result = iUserDAO.addUser(user);
+		assertNotEquals(-1, result);
 	}
 
 	/**
-	 * Test method for {@link com.avijit.busticketbooking.dao.UserDAO#getUser(int)}.
+	 * Test method for
+	 * {@link com.avijit.busticketbooking.dao.UserDAO#getUser(int)}.
 	 */
 	@Test
 	public void testGetUser() {
-		fail("Not yet implemented");
+		user = iUserDAO.getUser(1);
+		assertNotEquals(null, user);
 	}
 
 	/**
-	 * Test method for {@link com.avijit.busticketbooking.dao.UserDAO#updateUser(com.avijit.busticketbooking.model.User)}.
+	 * Test method for
+	 * {@link com.avijit.busticketbooking.dao.UserDAO#updateUser(com.avijit.busticketbooking.model.User)}.
 	 */
 	@Test
 	public void testUpdateUser() {
-		fail("Not yet implemented");
+		user.setName("Admin");
+		user.setId(1);
+		boolean result = iUserDAO.updateUser(user);
+		assertEquals(true, result);
 	}
 
 	/**
-	 * Test method for {@link com.avijit.busticketbooking.dao.UserDAO#deleteUser(int)}.
+	 * Test method for
+	 * {@link com.avijit.busticketbooking.dao.UserDAO#deleteUser(int)}.
 	 */
 	@Test
 	public void testDeleteUser() {
-		fail("Not yet implemented");
+		boolean result = iUserDAO.deleteUser(1);
+		assertNotEquals(true, result);
 	}
 
 }

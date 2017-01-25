@@ -27,7 +27,6 @@ public class StopDAO implements IStopDAO {
 	@Override
 	public int addStop(Stop stop) {
 		Session session = sessionFactory.getCurrentSession();
-		System.out.println(stop.getId()+stop.getName());
 		return (Integer) session.save(stop);
 	}
 
