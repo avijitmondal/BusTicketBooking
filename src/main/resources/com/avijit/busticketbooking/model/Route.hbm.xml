@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 22 Nov, 2016 11:32:39 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+	<class name="com.avijit.busticketbooking.model.Route" table="Route">
+		<id name="id" column="ROUTE_ID">
+			<generator class="native" />
+		</id>
+		<property name="origin" column="ORIGIN" />
+		<property name="destiny" column="DESTINY" />
+		<bag name="timeTable" cascade="all" table="Timetable">
+            <key column="ROUTE_ID"/>
+            <one-to-many class="com.avijit.busreservation.model.TimeTable" />
+        </bag>
+		
+	</class>
+</hibernate-mapping>
