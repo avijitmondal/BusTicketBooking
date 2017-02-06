@@ -12,6 +12,6 @@
 		<property name="name" column="NAME" type="string" />
 		<property name="sex" column="SEX" type="character" />
 		<property name="email" column="EMAIL" type="string" />
-		<property name="mobile" column="MOBILE" type="string" />
+		<property name="mobile" column="MOBILE" type="sring" />
 	</class>
 </hibernate-mapping>

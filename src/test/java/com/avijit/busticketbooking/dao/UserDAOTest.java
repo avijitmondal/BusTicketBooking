@@ -9,7 +9,6 @@ import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,14 +62,12 @@ public class UserDAOTest {
 	 * Test method for
 	 * {@link com.avijit.busticketbooking.dao.UserDAO#addUser(com.avijit.busticketbooking.model.User)}.
 	 */
-	@Ignore
 	@Test
 	public void testAddUser() {
-		user.setUsername("sidhu");
 		user.setName("Avijit Mondal");
 		user.setEmail("avijit.mondal@rebaca.com");
 		user.setPassword("admin");
-		user.setSex('M');
+		user.setSex("M");
 		user.setMobile("9564951393");
 		int result = iUserDAO.addUser(user);
 		assertNotEquals(-1, result);
@@ -80,7 +77,6 @@ public class UserDAOTest {
 	 * Test method for
 	 * {@link com.avijit.busticketbooking.dao.UserDAO#getUser(int)}.
 	 */
-	@Ignore
 	@Test
 	public void testGetUser() {
 		user = iUserDAO.getUser(1);
@@ -91,11 +87,10 @@ public class UserDAOTest {
 	 * Test method for
 	 * {@link com.avijit.busticketbooking.dao.UserDAO#updateUser(com.avijit.busticketbooking.model.User)}.
 	 */
-	@Ignore
 	@Test
 	public void testUpdateUser() {
 		user.setName("Admin");
-		user.setId(3);
+		user.setId(1);
 		boolean result = iUserDAO.updateUser(user);
 		assertEquals(true, result);
 	}
@@ -104,11 +99,10 @@ public class UserDAOTest {
 	 * Test method for
 	 * {@link com.avijit.busticketbooking.dao.UserDAO#deleteUser(int)}.
 	 */
-	@Ignore
 	@Test
 	public void testDeleteUser() {
-		boolean result = iUserDAO.deleteUser(3);
-		assertEquals(true, result);
+		boolean result = iUserDAO.deleteUser(1);
+		assertNotEquals(true, result);
 	}
 
 }
