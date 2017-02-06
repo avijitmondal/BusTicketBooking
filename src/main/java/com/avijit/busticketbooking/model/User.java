@@ -12,7 +12,7 @@ public class User {
 	private String username;
 	private String password;
 	private String name;
-	private String sex;
+	private char sex;
 	private String email;
 	private String mobile;
 	/**
@@ -29,7 +29,7 @@ public class User {
 	 * @param email
 	 * @param mobile
 	 */
-	public User(int id, String username, String password, String name, String sex, String email, String mobile) {
+	public User(int id, String username, String password, String name, char sex, String email, String mobile) {
 		this.id = id;
 		this.username = username;
 		this.password = password;
@@ -89,13 +89,13 @@ public class User {
 	/**
 	 * @return the sex
 	 */
-	public String getSex() {
+	public char getSex() {
 		return sex;
 	}
 	/**
 	 * @param sex the sex to set
 	 */
-	public void setSex(String sex) {
+	public void setSex(char sex) {
 		this.sex = sex;
 	}
 	/**
