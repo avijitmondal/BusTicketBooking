@@ -66,8 +66,7 @@ public class BusDAOTest {
 	@Ignore
 	@Test
 	public void testAddBus() {
-		bus.setBusNumber("WB 06 0 0000");
-		bus.setCapacity(54);
+		bus.setCapacity(50);
 		int result = iBusDAO.addBus(bus);
 		assertNotEquals(-1, result);
 	}

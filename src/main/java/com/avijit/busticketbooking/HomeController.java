@@ -21,7 +21,6 @@ import com.avijit.busticketbooking.model.SearchBus;
  */
 @Controller
 public class HomeController {
-  
 	@Autowired
 	private IBusDAO iBusDao;
 	@Autowired
