@@ -7,6 +7,6 @@
 		<id name="id" column="STOP_ID">
 			<generator class="native" />
 		</id>
-		<property name="name" column="NAME" />
+		<property name="name" column="NAME" type="string" />
 	</class>
 </hibernate-mapping>

@@ -11,8 +11,8 @@ import java.util.Collection;
  */
 public class Route {
 	private int id;
-	private String origin;
-	private String destiny;
+	private int origin;
+	private int destination;
 	private Collection<TimeTable> timeTable;
 
 	/**
@@ -24,13 +24,13 @@ public class Route {
 	/**
 	 * @param id
 	 * @param origin
-	 * @param destiny
+	 * @param destination
 	 * @param timeTable
 	 */
-	public Route(int id, String origin, String destiny, Collection<TimeTable> timeTable) {
+	public Route(int id, int origin, int destination, Collection<TimeTable> timeTable) {
 		this.id = id;
 		this.origin = origin;
-		this.destiny = destiny;
+		this.destination = destination;
 		this.timeTable = timeTable;
 	}
 
@@ -52,7 +52,7 @@ public class Route {
 	/**
 	 * @return the origin
 	 */
-	public String getOrigin() {
+	public int getOrigin() {
 		return origin;
 	}
 
@@ -60,23 +60,23 @@ public class Route {
 	 * @param origin
 	 *            the origin to set
 	 */
-	public void setOrigin(String origin) {
+	public void setOrigin(int origin) {
 		this.origin = origin;
 	}
 
 	/**
-	 * @return the destiny
+	 * @return the destination
 	 */
-	public String getDestiny() {
-		return destiny;
+	public int getDestination() {
+		return destination;
 	}
 
 	/**
-	 * @param destiny
-	 *            the destiny to set
+	 * @param destination
+	 *            the destination to set
 	 */
-	public void setDestiny(String destiny) {
-		this.destiny = destiny;
+	public void setDestination(int destination) {
+		this.destination = destination;
 	}
 
 	/**
@@ -92,5 +92,15 @@ public class Route {
 	 */
 	public void setTimeTable(Collection<TimeTable> timeTable) {
 		this.timeTable = timeTable;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "ID : " + this.id + " ,Origin : " + this.origin + " ,Destination : " + this.destination;
 	}
 }

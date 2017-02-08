@@ -7,9 +7,7 @@
 		<id name="id" column="MIDWAY_ID">
 			<generator class="native" />
 		</id>
-		<property name="routeID" column="ROUTE_ID" type="integer" />
-		<property name="timeTableID" column="TIMETABLE_ID" type="integer" />
 		<property name="stopID" column="STOP_ID" type="integer" />
-		<property name="time" column="TIME" />
+		<property name="time" column="TIME" type="timestamp" />
 	</class>
 </hibernate-mapping>

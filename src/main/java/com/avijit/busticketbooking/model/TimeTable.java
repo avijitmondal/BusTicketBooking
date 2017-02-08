@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.Date;
 
 /**
- * @author AVI
+ * @author avijit
  *
  */
 public class TimeTable {
@@ -131,5 +131,16 @@ public class TimeTable {
 	 */
 	public void setMidway(Collection<Midway> midway) {
 		this.midway = midway;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "ID : " + this.id + " ,DepartureTime : " + this.departureTime + " ,ArrivalTime : " + this.arrivalTime
+				+ " ,Available : " + this.available + " ,BusID : " + this.busID;
 	}
 }

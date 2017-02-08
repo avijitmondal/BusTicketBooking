@@ -7,7 +7,7 @@
 		<id name="id" column="BUS_ID">
 			<generator class="native" />
 		</id>
-		<property name="busNumber" column="BUSNUMBER" />
-		<property name="capacity" column="CAPACITY" />
+		<property name="busNumber" column="BUSNUMBER" type="string" />
+		<property name="capacity" column="CAPACITY" type="integer" />
 	</class>
 </hibernate-mapping>

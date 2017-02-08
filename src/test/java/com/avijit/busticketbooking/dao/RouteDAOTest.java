@@ -3,20 +3,19 @@
  */
 package com.avijit.busticketbooking.dao;
 
-import static org.junit.Assert.*;
+import java.util.List;
 
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.avijit.busticketbooking.model.Bus;
+import com.avijit.busticketbooking.model.Route;
 
 /**
  * @author AVI
@@ -24,11 +23,11 @@ import com.avijit.busticketbooking.model.Bus;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml")
-public class BusDAOTest {
-
+public class RouteDAOTest {
+	
 	@Autowired
-	IBusDAO iBusDAO;
-	Bus bus;
+	IRouteDAO iRouteDAO;
+	Route route;
 
 	/**
 	 * @throws java.lang.Exception
@@ -49,7 +48,7 @@ public class BusDAOTest {
 	 */
 	@Before
 	public void setUp() throws Exception {
-		bus = new Bus();
+		route = new Route();
 	}
 
 	/**
@@ -61,52 +60,41 @@ public class BusDAOTest {
 
 	/**
 	 * Test method for
-	 * {@link com.avijit.busticketbooking.dao.BusDAO#addBus(com.avijit.busticketbooking.model.Bus)}.
+	 * {@link com.avijit.busticketbooking.dao.RouteDAO#findRoutesByOrigin(java.lang.String)}.
 	 */
-	@Ignore
 	@Test
-	public void testAddBus() {
-		bus.setBusNumber("WB 06 0 0000");
-		bus.setCapacity(50);
-		int result = iBusDAO.addBus(bus);
-		assertNotEquals(-1, result);
+	public void testFindRoutesByOrigin() {
+		System.out.println("testFindRoutesByOrigin");
 	}
 
 	/**
 	 * Test method for
-	 * {@link com.avijit.busticketbooking.dao.BusDAO#getBus(int)}.
+	 * {@link com.avijit.busticketbooking.dao.RouteDAO#findRoutesByDestination(java.lang.String)}.
 	 */
-	//@Ignore
 	@Test
-	public void testGetBus() {
-		bus = iBusDAO.getBus(51);
-		assertNotEquals(null, bus);
+	public void testFindRoutesByDestination() {
+		System.out.println("testFindRoutesByDestination");
 	}
 
 	/**
 	 * Test method for
-	 * {@link com.avijit.busticketbooking.dao.BusDAO#updateBus(com.avijit.busticketbooking.model.Bus)}.
+	 * {@link com.avijit.busticketbooking.dao.RouteDAO#findRouteByOriginAndDestination(java.lang.String, java.lang.String)}.
 	 */
-	@Ignore
 	@Test
-	public void testUpdateBus() {
-		bus.setBusNumber("WB 01 1 1111");
-		bus.setCapacity(36);
-		bus.setId(50);
-		boolean result = iBusDAO.updateBus(bus);
-		// assertEquals(true, result);
-		assertEquals(false, result);
+	public void testFindRouteByOriginAndDestination() {
+		System.out.println("testFindRouteByOriginAndDestination");
 	}
 
 	/**
 	 * Test method for
-	 * {@link com.avijit.busticketbooking.dao.BusDAO#deleteBus(int)}.
+	 * {@link com.avijit.busticketbooking.dao.RouteDAO#findAllRoutes()}.
 	 */
-	@Ignore
 	@Test
-	public void testDeleteBus() {
-		boolean result = iBusDAO.deleteBus(50);
-		assertEquals(true, result);
+	public void testFindAllRoutes() {
+		List<Route> list = iRouteDAO.findAllRoutes();
+		for (Route r : list) {
+			System.out.println(r);	
+		}
 	}
 
 }

@@ -7,15 +7,12 @@
 		<id name="id" column="TIMETABLE_ID">
 			<generator class="native" />
 		</id>
-		<property name="routeID" column="ROUTEID" type="integer" />
-		<property name="departureTime" column="DEPARTURETIME" />
-		<property name="arrivalTime" column="ARRIVALTIME" />
 		<property name="available" column="AVAILABLE" type="integer" />
-		<property name="busID" column="BUSID" type="integer" />
+		<property name="busID" column="BUS_ID" type="integer" />
 		<bag name="midway" cascade="all" table="Midway">
-            <key column="TIMETABLE_ID"/>
-            <one-to-many class="com.avijit.busreservation.model.Midway" />
-        </bag>
-		
+			<key column="TIMETABLE_ID" />
+			<one-to-many class="com.avijit.busticketbooking.model.Midway" />
+		</bag>
+
 	</class>
 </hibernate-mapping>

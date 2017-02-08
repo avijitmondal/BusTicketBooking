@@ -3,17 +3,16 @@
  */
 package com.avijit.busticketbooking.model;
 
+import java.util.Date;
+
 /**
- * @author AVI
+ * @author avijit
  *
  */
 public class Midway {
 	private int id;
-	/*
-	 * private int routeID; private int timeTableID;
-	 */
 	private int stopID;
-	private String time;
+	private Date time;
 
 	/**
 	 * 
@@ -23,16 +22,11 @@ public class Midway {
 
 	/**
 	 * @param id
-	 * @param routeID
-	 * @param timeTableID
 	 * @param stopID
 	 * @param time
 	 */
-	public Midway(int id, /* int routeID, int timeTableID, */ int stopID, String time) {
+	public Midway(int id, int stopID, Date time) {
 		this.id = id;
-		/*
-		 * this.routeID = routeID; this.timeTableID = timeTableID;
-		 */
 		this.stopID = stopID;
 		this.time = time;
 	}
@@ -53,36 +47,6 @@ public class Midway {
 	}
 
 	/**
-	 * @return the routeID
-	 */
-/*	public int getRouteID() {
-		return routeID;
-	}
-
-	*//**
-	 * @param routeID
-	 *            the routeID to set
-	 *//*
-	public void setRouteID(int routeID) {
-		this.routeID = routeID;
-	}
-
-	*//**
-	 * @return the timeTableID
-	 *//*
-	public int getTimeTableID() {
-		return timeTableID;
-	}
-
-	*//**
-	 * @param timeTableID
-	 *            the timeTableID to set
-	 *//*
-	public void setTimeTableID(int timeTableID) {
-		this.timeTableID = timeTableID;
-	}*/
-
-	/**
 	 * @return the stopID
 	 */
 	public int getStopID() {
@@ -100,7 +64,7 @@ public class Midway {
 	/**
 	 * @return the time
 	 */
-	public String getTime() {
+	public Date getTime() {
 		return time;
 	}
 
@@ -108,7 +72,17 @@ public class Midway {
 	 * @param time
 	 *            the time to set
 	 */
-	public void setTime(String time) {
+	public void setTime(Date time) {
 		this.time = time;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "ID : " + this.id + " ,StopID : " + this.stopID + " ,Time : " + this.time;
 	}
 }
