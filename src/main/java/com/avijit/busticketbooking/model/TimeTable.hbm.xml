@@ -7,6 +7,8 @@
 		<id name="id" column="TIMETABLE_ID">
 			<generator class="native" />
 		</id>
+		<property name="departureTime" column="DEPARTURE_TIME" type="timestamp" />
+		<property name="arrivalTime" column="ARRIVAL_TIME" type="timestamp" />
 		<property name="available" column="AVAILABLE" type="integer" />
 		<property name="busID" column="BUS_ID" type="integer" />
 		<bag name="midway" cascade="all" table="Midway">

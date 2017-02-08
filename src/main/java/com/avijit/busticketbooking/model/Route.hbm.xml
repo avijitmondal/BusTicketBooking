@@ -8,6 +8,7 @@
 			<generator class="native" />
 		</id>
 		<property name="origin" column="ORIGIN" type="integer" />
+		<property name="destination" column="DESTINATION" type="integer" />
 		<bag name="timeTable" cascade="all" table="Timetable">
 			<key column="ROUTE_ID" />
 			<one-to-many class="com.avijit.busticketbooking.model.TimeTable" />

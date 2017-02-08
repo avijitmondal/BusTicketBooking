@@ -69,12 +69,10 @@ public class RouteDAO implements IRouteDAO {
 	 * @see com.avijit.busreservation.dao.IRouteDAO#findAllRoutes()
 	 */
 	@Override
+	@SuppressWarnings("unchecked")
 	public List<Route> findAllRoutes() {
-		// TODO Auto-generated method stub
-		@SuppressWarnings("unchecked")
-//		List<Route> listRoute = (List<Route>) sessionFactory.getCurrentSession().createCriteria(Route.class)
-//				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
-		List<Route> listRoute = sessionFactory.getCurrentSession().createQuery("From ROUTE").list(); 
+		List<Route> listRoute = (List<Route>) sessionFactory.getCurrentSession().createCriteria(Route.class)
+				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
 
 		return listRoute;
 	}
