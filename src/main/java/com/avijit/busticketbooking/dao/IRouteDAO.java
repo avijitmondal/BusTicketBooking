@@ -17,31 +17,31 @@ public interface IRouteDAO {
 	/**
 	 * 
 	 * @param origin
-	 * @return
+	 * @return list of Route
 	 */
 	@Transactional
-	public List<Route> findRoutesByOrigin(String origin);
+	public List<Route> findRoutesByOrigin(int origin);
 
 	/**
 	 * 
 	 * @param destination
-	 * @return
+	 * @return list of Route
 	 */
 	@Transactional
-	public List<Route> findRoutesByDestination(String destination);
+	public List<Route> findRoutesByDestination(int destination);
 
 	/**
 	 * 
 	 * @param origin
 	 * @param destination
-	 * @return
+	 * @return list of Route
 	 */
 	@Transactional
-	public Route findRouteByOriginAndDestination(String origin, String destination);
+	public List<Route> findRouteByOriginAndDestination(int origin, int destination);
 
 	/**
 	 * 
-	 * @return
+	 * @return list of Route
 	 */
 	@Transactional
 	public List<Route> findAllRoutes();

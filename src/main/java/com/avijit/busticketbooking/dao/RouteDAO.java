@@ -5,8 +5,8 @@ package com.avijit.busticketbooking.dao;
 
 import java.util.List;
 
-import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 
 import com.avijit.busticketbooking.model.Route;
 
@@ -32,9 +32,11 @@ public class RouteDAO implements IRouteDAO {
 	 * String)
 	 */
 	@Override
-	public List<Route> findRoutesByOrigin(String origin) {
-		// TODO Auto-generated method stub
-		return null;
+	@SuppressWarnings("unchecked")
+	public List<Route> findRoutesByOrigin(int origin) {
+		List<Route> listRoute = (List<Route>) sessionFactory.getCurrentSession().createCriteria(Route.class)
+				.add(Restrictions.eq("orignin", origin)).list();
+		return listRoute;
 	}
 
 	/*
@@ -45,9 +47,11 @@ public class RouteDAO implements IRouteDAO {
 	 * .String)
 	 */
 	@Override
-	public List<Route> findRoutesByDestination(String destination) {
-		// TODO Auto-generated method stub
-		return null;
+	@SuppressWarnings("unchecked")
+	public List<Route> findRoutesByDestination(int destination) {
+		List<Route> listRoute = (List<Route>) sessionFactory.getCurrentSession().createCriteria(Route.class)
+				.add(Restrictions.eq("destination", destination)).list();
+		return listRoute;
 	}
 
 	/*
@@ -58,9 +62,12 @@ public class RouteDAO implements IRouteDAO {
 	 * java.lang.String, java.lang.String)
 	 */
 	@Override
-	public Route findRouteByOriginAndDestination(String origin, String destination) {
-		// TODO Auto-generated method stub
-		return null;
+	@SuppressWarnings("unchecked")
+	public List<Route> findRouteByOriginAndDestination(int origin, int destination) {
+		List<Route> listRoute = (List<Route>) sessionFactory.getCurrentSession().createCriteria(Route.class)
+				.add(Restrictions.eq("origin", origin))
+				.add(Restrictions.eq("destination", destination)).list();
+		return listRoute;
 	}
 
 	/*
@@ -71,8 +78,8 @@ public class RouteDAO implements IRouteDAO {
 	@Override
 	@SuppressWarnings("unchecked")
 	public List<Route> findAllRoutes() {
-		List<Route> listRoute = (List<Route>) sessionFactory.getCurrentSession().createCriteria(Route.class)
-				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
+		List<Route> listRoute = (List<Route>) sessionFactory.getCurrentSession().createCriteria(Route.class).list();
+		// .setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY)
 
 		return listRoute;
 	}
