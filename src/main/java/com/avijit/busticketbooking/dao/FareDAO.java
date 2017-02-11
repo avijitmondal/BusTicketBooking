@@ -5,6 +5,8 @@ package com.avijit.busticketbooking.dao;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.avijit.busticketbooking.model.Fare;
 
@@ -13,6 +15,7 @@ import com.avijit.busticketbooking.model.Fare;
  *
  */
 public class FareDAO implements IFareDAO {
+	private static final Logger logger = LoggerFactory.getLogger(FareDAO.class);
 	private SessionFactory sessionFactory;
 
 	/**
@@ -30,6 +33,7 @@ public class FareDAO implements IFareDAO {
 	 */
 	@Override
 	public int addFare(Fare fare) {
+		logger.info("addFare");
 		Session session = sessionFactory.getCurrentSession();
 		return (Integer) session.save(fare);
 	}
@@ -41,6 +45,7 @@ public class FareDAO implements IFareDAO {
 	 */
 	@Override
 	public Fare getFare(int fareID) {
+		logger.info("getFare");
 		Session session = sessionFactory.getCurrentSession();
 		return (Fare) session.get(Fare.class, fareID);
 	}
@@ -53,6 +58,7 @@ public class FareDAO implements IFareDAO {
 	 */
 	@Override
 	public boolean updateFare(Fare fare) {
+		logger.info("updateFare");
 		Session session = sessionFactory.getCurrentSession();
 		Fare tempFare = (Fare) session.get(Fare.class, fare.getId());
 		if (tempFare == null)
@@ -72,6 +78,7 @@ public class FareDAO implements IFareDAO {
 	 */
 	@Override
 	public boolean deleteFare(int fareID) {
+		logger.info("deleteFare");
 		Session session = sessionFactory.getCurrentSession();
 		Fare fare = (Fare) session.get(Fare.class, fareID);
 		if (fare == null)

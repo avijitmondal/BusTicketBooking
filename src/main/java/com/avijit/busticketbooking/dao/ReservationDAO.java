@@ -4,12 +4,13 @@
 package com.avijit.busticketbooking.dao;
 
 import java.sql.Timestamp;
-import java.time.LocalDateTime;
 import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.avijit.busticketbooking.model.Reservation;
 import com.avijit.busticketbooking.util.Constants.ReservationTime;
@@ -19,6 +20,7 @@ import com.avijit.busticketbooking.util.Constants.ReservationTime;
  *
  */
 public class ReservationDAO implements IReservationDAO {
+	private static final Logger logger = LoggerFactory.getLogger(ReservationDAO.class);
 	private SessionFactory sessionFactory;
 
 	/**
@@ -37,6 +39,7 @@ public class ReservationDAO implements IReservationDAO {
 	 */
 	@Override
 	public int addReservation(Reservation reservation) {
+		logger.info("addReservation");
 		Session session = sessionFactory.getCurrentSession();
 		return (Integer) session.save(reservation);
 	}
@@ -49,6 +52,7 @@ public class ReservationDAO implements IReservationDAO {
 	 */
 	@Override
 	public Reservation getReservation(int userID, int reservationID) {
+		logger.info("getReservation");
 		Session session = sessionFactory.getCurrentSession();
 		return (Reservation) session.createCriteria(Reservation.class).add(Restrictions.eq("userID", userID))
 				.add(Restrictions.eq("id", reservationID)).list().get(0);
@@ -63,6 +67,7 @@ public class ReservationDAO implements IReservationDAO {
 	@Override
 	@SuppressWarnings("unchecked")
 	public List<Reservation> getReservation(int userID, ReservationTime pastOrFuture) {
+		logger.info("getReservation");
 		List<Reservation> listReservation = null;
 		if (pastOrFuture == ReservationTime.PAST_RESERVATION) {
 			listReservation = (List<Reservation>) sessionFactory.getCurrentSession().createCriteria(Reservation.class)
@@ -83,6 +88,7 @@ public class ReservationDAO implements IReservationDAO {
 	 */
 	@Override
 	public boolean updateReservation(Reservation reservation) {
+		logger.info("updateReservation");
 		Session session = sessionFactory.getCurrentSession();
 		Reservation tempReservation = (Reservation) session.get(Reservation.class, reservation.getId());
 		if (tempReservation == null)
@@ -105,6 +111,7 @@ public class ReservationDAO implements IReservationDAO {
 	 */
 	@Override
 	public boolean deleteReservation(int reservationID) {
+		logger.info("deleteReservation");
 		Session session = sessionFactory.getCurrentSession();
 		Reservation reservation = (Reservation) session.get(Reservation.class, reservationID);
 		if (reservation == null)

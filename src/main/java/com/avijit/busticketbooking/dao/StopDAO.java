@@ -5,6 +5,8 @@ package com.avijit.busticketbooking.dao;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.avijit.busticketbooking.model.Stop;
 
@@ -13,6 +15,7 @@ import com.avijit.busticketbooking.model.Stop;
  *
  */
 public class StopDAO implements IStopDAO {
+	private static final Logger logger = LoggerFactory.getLogger(StopDAO.class);
 	private SessionFactory sessionFactory;
 
 	/**
@@ -26,6 +29,7 @@ public class StopDAO implements IStopDAO {
 	 */
 	@Override
 	public int addStop(Stop stop) {
+		logger.info("addStop");
 		Session session = sessionFactory.getCurrentSession();
 		return (Integer) session.save(stop);
 	}
@@ -35,6 +39,7 @@ public class StopDAO implements IStopDAO {
 	 */
 	@Override
 	public Stop getStop(int stopID) {
+		logger.info("getStop");
 		Session session = sessionFactory.getCurrentSession();
 		return (Stop) session.get(Stop.class, stopID);
 	}
@@ -44,6 +49,7 @@ public class StopDAO implements IStopDAO {
 	 */
 	@Override
 	public boolean updateStop(Stop stop) {
+		logger.info("updateStop");
 		Session session = sessionFactory.getCurrentSession();
 		Stop tempStop = (Stop) session.get(Stop.class, stop.getId());
 		if (tempStop == null)
@@ -59,6 +65,7 @@ public class StopDAO implements IStopDAO {
 	 */
 	@Override
 	public boolean deleteStop(int stopID) {
+		logger.info("deleteStop");
 		Session session = sessionFactory.getCurrentSession();
 		Stop stop = (Stop) session.get(Stop.class, stopID);
 		if (stop == null)

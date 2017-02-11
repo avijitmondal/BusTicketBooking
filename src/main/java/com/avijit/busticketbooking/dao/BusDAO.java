@@ -5,6 +5,8 @@ package com.avijit.busticketbooking.dao;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.avijit.busticketbooking.model.Bus;
 
@@ -13,6 +15,7 @@ import com.avijit.busticketbooking.model.Bus;
  *
  */
 public class BusDAO implements IBusDAO {
+	private static final Logger logger = LoggerFactory.getLogger(BusDAO.class);
 	private SessionFactory sessionFactory;
 
 	/**
@@ -31,6 +34,7 @@ public class BusDAO implements IBusDAO {
 	 */
 	@Override
 	public int addBus(Bus bus) {
+		logger.info("addBus");
 		Session session = sessionFactory.getCurrentSession();
 		return (Integer) session.save(bus);
 	}
@@ -42,6 +46,7 @@ public class BusDAO implements IBusDAO {
 	 */
 	@Override
 	public Bus getBus(int busID) {
+		logger.info("getBus");
 		Session session = sessionFactory.getCurrentSession();
 		return (Bus) session.get(Bus.class, busID);
 	}
@@ -55,6 +60,7 @@ public class BusDAO implements IBusDAO {
 	 */
 	@Override
 	public boolean updateBus(Bus bus) {
+		logger.info("updateBus");
 		Session session = sessionFactory.getCurrentSession();
 		Bus tempBus = (Bus) session.get(Bus.class, bus.getId());
 		if (tempBus == null)
@@ -73,6 +79,7 @@ public class BusDAO implements IBusDAO {
 	 */
 	@Override
 	public boolean deleteBus(int busID) {
+		logger.info("deleteBus");
 		Session session = sessionFactory.getCurrentSession();
 		Bus bus = (Bus) session.get(Bus.class, busID);
 		if (bus == null)
