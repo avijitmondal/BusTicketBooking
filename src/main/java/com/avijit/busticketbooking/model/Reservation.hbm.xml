@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 22 Nov, 2016 11:32:39 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+	<class name="com.avijit.busticketbooking.model.Reservation" table="Reservation">
+		<id name="id" column="Reservation_ID">
+			<generator class="native" />
+		</id>
+		<property name="midwayID" column="MIDWAY_ID" type="integer" />
+		<property name="userID" column="USER_ID" type="integer" />
+		<property name="seatID" column="SEAT_ID" type="integer" />
+		<property name="fare" column="FARE" type="integer" />
+		<property name="tstamp" column="TSTAMP" type="timestamp" />
+	</class>
+</hibernate-mapping>

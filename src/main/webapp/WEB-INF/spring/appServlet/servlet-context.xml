@@ -78,4 +78,10 @@
 			<ref bean="sessionFactory" />
 		</constructor-arg>
 	</bean>
+
+	<bean id="iReservationDAO" class="com.avijit.busticketbooking.dao.ReservationDAO">
+		<constructor-arg>
+			<ref bean="sessionFactory" />
+		</constructor-arg>
+	</bean>
 </beans>

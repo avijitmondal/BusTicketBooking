@@ -13,5 +13,6 @@
 		<mapping resource="com/avijit/busticketbooking/model/Midway.hbm.xml" />
 		<mapping resource="com/avijit/busticketbooking/model/Route.hbm.xml" />
 		<mapping resource="com/avijit/busticketbooking/model/TimeTable.hbm.xml" />
+		<mapping resource="com/avijit/busticketbooking/model/Reservation.hbm.xml" />
 	</session-factory>
 </hibernate-configuration>
