@@ -13,6 +13,8 @@ import org.slf4j.LoggerFactory;
 import com.avijit.busticketbooking.model.Route;
 
 /**
+ * Access Route table data and one-to-many relation with TimeTable and Midway
+ * 
  * @author avijit
  *
  */

@@ -10,11 +10,13 @@ package com.avijit.busticketbooking.model;
 public class Stop {
 	private int id;
 	private String name;
+
 	/**
 	 * 
 	 */
 	public Stop() {
 	}
+
 	/**
 	 * @param id
 	 * @param name
@@ -23,28 +25,44 @@ public class Stop {
 		this.id = id;
 		this.name = name;
 	}
+
 	/**
 	 * @return the id
 	 */
 	public int getId() {
 		return id;
 	}
+
 	/**
-	 * @param id the id to set
+	 * @param id
+	 *            the id to set
 	 */
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	/**
 	 * @return the name
 	 */
 	public String getName() {
 		return name;
 	}
+
 	/**
-	 * @param name the name to set
+	 * @param name
+	 *            the name to set
 	 */
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "ID : " + this.id + " ,Name : " + this.name;
 	}
 }

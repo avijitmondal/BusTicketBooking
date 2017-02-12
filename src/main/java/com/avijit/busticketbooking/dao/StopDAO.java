@@ -11,6 +11,8 @@ import org.slf4j.LoggerFactory;
 import com.avijit.busticketbooking.model.Stop;
 
 /**
+ * Access Stop table data
+ * 
  * @author avijit
  *
  */
@@ -24,8 +26,12 @@ public class StopDAO implements IStopDAO {
 	public StopDAO(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
-	/* (non-Javadoc)
-	 * @see com.avijit.busticketbooking.dao.IStopDAO#addStop(com.avijit.busticketbooking.model.Stop)
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.avijit.busticketbooking.dao.IStopDAO#addStop(com.avijit.
+	 * busticketbooking.model.Stop)
 	 */
 	@Override
 	public int addStop(Stop stop) {
@@ -34,7 +40,9 @@ public class StopDAO implements IStopDAO {
 		return (Integer) session.save(stop);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see com.avijit.busticketbooking.dao.IStopDAO#getStop(int)
 	 */
 	@Override
@@ -44,8 +52,11 @@ public class StopDAO implements IStopDAO {
 		return (Stop) session.get(Stop.class, stopID);
 	}
 
-	/* (non-Javadoc)
-	 * @see com.avijit.busticketbooking.dao.IStopDAO#updateStop(com.avijit.busticketbooking.model.Stop)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.avijit.busticketbooking.dao.IStopDAO#updateStop(com.avijit.
+	 * busticketbooking.model.Stop)
 	 */
 	@Override
 	public boolean updateStop(Stop stop) {
@@ -54,13 +65,15 @@ public class StopDAO implements IStopDAO {
 		Stop tempStop = (Stop) session.get(Stop.class, stop.getId());
 		if (tempStop == null)
 			return false;
-		
+
 		tempStop.setName(stop.getName());
 		session.update(tempStop);
 		return true;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see com.avijit.busticketbooking.dao.IStopDAO#deleteStop(int)
 	 */
 	@Override

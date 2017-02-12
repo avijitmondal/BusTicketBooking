@@ -137,7 +137,6 @@ public class Reservation {
 	 */
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		return "ID : " + this.id + " ,MidwayID : " + this.midwayID + " ,UserID : " + this.seatID + " ,FareID : "
 				+ this.fareID + " ,TStamp : " + this.tstamp;
 	}

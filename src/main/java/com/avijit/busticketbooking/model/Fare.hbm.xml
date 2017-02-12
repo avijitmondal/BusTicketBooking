@@ -7,8 +7,8 @@
 		<id name="id" column="FARE_ID">
 			<generator class="native" />
 		</id>
-		<property name="destinationStopID" column="fromstopid" type="integer" />
-		<property name="sourceStopID" column="tostopid" type="integer" />
-		<property name="amount" column="amount" type="integer" />
+		<property name="destinationStopID" column="FROMSTOPID" type="integer" />
+		<property name="sourceStopID" column="TOSTOPID" type="integer" />
+		<property name="amount" column="AMOUNT" type="integer" />
 	</class>
 </hibernate-mapping>

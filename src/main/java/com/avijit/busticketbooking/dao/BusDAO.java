@@ -11,6 +11,8 @@ import org.slf4j.LoggerFactory;
 import com.avijit.busticketbooking.model.Bus;
 
 /**
+ * Access Bus table data
+ * 
  * @author avijit
  *
  */

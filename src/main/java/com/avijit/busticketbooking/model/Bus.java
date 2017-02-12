@@ -11,11 +11,13 @@ public class Bus {
 	private int id;
 	private String busNumber;
 	private int capacity;
+
 	/**
 	 * 
 	 */
 	public Bus() {
 	}
+
 	/**
 	 * @param id
 	 * @param ac
@@ -26,50 +28,60 @@ public class Bus {
 		this.busNumber = busNumber;
 		this.capacity = capacity;
 	}
+
 	/**
 	 * @return the id
 	 */
 	public int getId() {
 		return id;
 	}
+
 	/**
-	 * @param id the id to set
+	 * @param id
+	 *            the id to set
 	 */
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	/**
 	 * @return the busNumber
 	 */
 	public String getBusNumber() {
 		return busNumber;
 	}
+
 	/**
-	 * @param busNumber the busNumber to set
+	 * @param busNumber
+	 *            the busNumber to set
 	 */
 	public void setBusNumber(String busNumber) {
 		this.busNumber = busNumber;
 	}
+
 	/**
 	 * @return the capacity
 	 */
 	public int getCapacity() {
 		return capacity;
 	}
+
 	/**
-	 * @param capacity the capacity to set
+	 * @param capacity
+	 *            the capacity to set
 	 */
 	public void setCapacity(int capacity) {
 		this.capacity = capacity;
 	}
-	
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return "Id : " + this.id + " , Bus Number : "+ this.busNumber + " , Available : " + this.capacity;
+		return "Id : " + this.id + " , Bus Number : " + this.busNumber + " , Available : " + this.capacity;
 	}
 
 }

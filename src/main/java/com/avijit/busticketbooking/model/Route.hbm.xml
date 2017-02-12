@@ -3,13 +3,13 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 22 Nov, 2016 11:32:39 PM by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-	<class name="com.avijit.busticketbooking.model.Route" table="Route">
+	<class name="com.avijit.busticketbooking.model.Route" table="ROUTE">
 		<id name="id" column="ROUTE_ID">
 			<generator class="native" />
 		</id>
 		<property name="origin" column="ORIGIN" type="integer" />
 		<property name="destination" column="DESTINATION" type="integer" />
-		<bag name="timeTable" cascade="all" table="Timetable">
+		<bag name="timeTable" cascade="all" table="TIMETABLE">
 			<key column="ROUTE_ID" />
 			<one-to-many class="com.avijit.busticketbooking.model.TimeTable" />
 		</bag>

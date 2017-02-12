@@ -12,11 +12,13 @@ public class Fare {
 	private int destinationStopID;
 	private int sourceStopID;
 	private int amount;
+
 	/**
 	 * 
 	 */
 	public Fare() {
 	}
+
 	/**
 	 * @param id
 	 * @param destinationStopID
@@ -29,52 +31,75 @@ public class Fare {
 		this.sourceStopID = sourceStopID;
 		this.amount = amount;
 	}
+
 	/**
 	 * @return the id
 	 */
 	public int getId() {
 		return id;
 	}
+
 	/**
-	 * @param id the id to set
+	 * @param id
+	 *            the id to set
 	 */
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	/**
 	 * @return the destinationStopID
 	 */
 	public int getDestinationStopID() {
 		return destinationStopID;
 	}
+
 	/**
-	 * @param destinationStopID the destinationStopID to set
+	 * @param destinationStopID
+	 *            the destinationStopID to set
 	 */
 	public void setDestinationStopID(int destinationStopID) {
 		this.destinationStopID = destinationStopID;
 	}
+
 	/**
 	 * @return the sourceStopID
 	 */
 	public int getSourceStopID() {
 		return sourceStopID;
 	}
+
 	/**
-	 * @param sourceStopID the sourceStopID to set
+	 * @param sourceStopID
+	 *            the sourceStopID to set
 	 */
 	public void setSourceStopID(int sourceStopID) {
 		this.sourceStopID = sourceStopID;
 	}
+
 	/**
 	 * @return the amount
 	 */
 	public int getAmount() {
 		return amount;
 	}
+
 	/**
-	 * @param amount the amount to set
+	 * @param amount
+	 *            the amount to set
 	 */
 	public void setAmount(int amount) {
 		this.amount = amount;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "ID : " + this.id + " ,DestinationStopID : " + this.destinationStopID + " ,SourceStopID : "
+				+ this.sourceStopID + " ,Amount : " + this.amount;
 	}
 }

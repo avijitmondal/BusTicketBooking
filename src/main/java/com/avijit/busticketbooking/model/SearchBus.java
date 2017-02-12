@@ -13,11 +13,13 @@ public class SearchBus {
 	private String date;
 	private String fromTime;
 	private String toTime;
+
 	/**
 	 * 
 	 */
 	public SearchBus() {
 	}
+
 	/**
 	 * @param source
 	 * @param destination
@@ -32,71 +34,90 @@ public class SearchBus {
 		this.fromTime = fromTime;
 		this.toTime = toTime;
 	}
+
 	/**
 	 * @return the source
 	 */
 	public String getSource() {
 		return source;
 	}
+
 	/**
-	 * @param source the source to set
+	 * @param source
+	 *            the source to set
 	 */
 	public void setSource(String source) {
 		this.source = source;
 	}
+
 	/**
 	 * @return the destination
 	 */
 	public String getDestination() {
 		return destination;
 	}
+
 	/**
-	 * @param destination the destination to set
+	 * @param destination
+	 *            the destination to set
 	 */
 	public void setDestination(String destination) {
 		this.destination = destination;
 	}
+
 	/**
 	 * @return the date
 	 */
 	public String getDate() {
 		return date;
 	}
+
 	/**
-	 * @param date the date to set
+	 * @param date
+	 *            the date to set
 	 */
 	public void setDate(String date) {
 		this.date = date;
 	}
+
 	/**
 	 * @return the fromTime
 	 */
 	public String getFromTime() {
 		return fromTime;
 	}
+
 	/**
-	 * @param fromTime the fromTime to set
+	 * @param fromTime
+	 *            the fromTime to set
 	 */
 	public void setFromTime(String fromTime) {
 		this.fromTime = fromTime;
 	}
+
 	/**
 	 * @return the toTime
 	 */
 	public String getToTime() {
 		return toTime;
 	}
+
 	/**
-	 * @param toTime the toTime to set
+	 * @param toTime
+	 *            the toTime to set
 	 */
 	public void setToTime(String toTime) {
 		this.toTime = toTime;
 	}
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-		return "Source : " + source + " ,Destination : " + destination + " ,Date : " + date + " ,FromTime : " + fromTime + " ,ToTime : " + toTime;
+		return "Source : " + this.source + " ,Destination : " + this.destination + " ,Date : " + this.date
+				+ " ,FromTime : " + this.fromTime + " ,ToTime : " + this.toTime;
 	}
 }

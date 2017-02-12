@@ -11,6 +11,8 @@ import org.slf4j.LoggerFactory;
 import com.avijit.busticketbooking.model.User;
 
 /**
+ * Access User table data
+ * 
  * @author avijit
  *
  */
@@ -63,7 +65,7 @@ public class UserDAO implements IUserDAO {
 		User tempUser = (User) session.get(User.class, user.getId());
 		if (tempUser == null)
 			return false;
-		
+
 		tempUser.setName(user.getName());
 		tempUser.setEmail(user.getEmail());
 		tempUser.setMobile(user.getMobile());

@@ -16,6 +16,8 @@ import com.avijit.busticketbooking.model.Reservation;
 import com.avijit.busticketbooking.util.Constants.ReservationTime;
 
 /**
+ * Access Reservation table data
+ * 
  * @author avijit
  *
  */

@@ -8,20 +8,24 @@ import org.springframework.transaction.annotation.Transactional;
 import com.avijit.busticketbooking.model.Bus;
 
 /**
+ * Access Bus table data
+ * 
  * @author avijit
  *
  */
 public interface IBusDAO {
 
 	/**
-	 * 
-	 * @param bus
+	 * Add new bus.
+	 *
+	 * @param buss
 	 * @return int
 	 */
 	@Transactional
 	public int addBus(Bus bus);
 
 	/**
+	 * Get bus details
 	 * 
 	 * @param busID
 	 * @return Bus
@@ -30,6 +34,7 @@ public interface IBusDAO {
 	public Bus getBus(int busID);
 
 	/**
+	 * Update a bus
 	 * 
 	 * @param bus
 	 * @return boolean
@@ -38,6 +43,7 @@ public interface IBusDAO {
 	public boolean updateBus(Bus bus);
 
 	/**
+	 * Delete a bus details
 	 * 
 	 * @param busID
 	 * @return boolean
