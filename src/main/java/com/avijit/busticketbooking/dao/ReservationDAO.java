@@ -97,7 +97,7 @@ public class ReservationDAO implements IReservationDAO {
 		tempReservation.setMidwayID(reservation.getMidwayID());
 		tempReservation.setSeatID(reservation.getSeatID());
 		tempReservation.setUserID(reservation.getUserID());
-		tempReservation.setFare(reservation.getFare());
+		tempReservation.setFareID(reservation.getFareID());
 		tempReservation.setTstamp(reservation.getTstamp());
 		session.update(tempReservation);
 		return true;

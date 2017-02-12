@@ -14,7 +14,7 @@ public class Reservation {
 	private int midwayID;
 	private int userID;
 	private int seatID;
-	private int fare;
+	private int fareID;
 	private Date tstamp;
 
 	/**
@@ -28,15 +28,15 @@ public class Reservation {
 	 * @param midwayID
 	 * @param userID
 	 * @param seatID
-	 * @param fare
+	 * @param fareID
 	 * @param tstamp
 	 */
-	public Reservation(int id, int midwayID, int userID, int seatID, int fare, Date tstamp) {
+	public Reservation(int id, int midwayID, int userID, int seatID, int fareID, Date tstamp) {
 		this.id = id;
 		this.midwayID = midwayID;
 		this.userID = userID;
 		this.seatID = seatID;
-		this.fare = fare;
+		this.fareID = fareID;
 		this.tstamp = tstamp;
 	}
 
@@ -101,18 +101,18 @@ public class Reservation {
 	}
 
 	/**
-	 * @return the fare
+	 * @return the fareID
 	 */
-	public int getFare() {
-		return fare;
+	public int getFareID() {
+		return fareID;
 	}
 
 	/**
-	 * @param fare
+	 * @param fareID
 	 *            the fare to set
 	 */
-	public void setFare(int fare) {
-		this.fare = fare;
+	public void setFareID(int fareID) {
+		this.fareID = fareID;
 	}
 
 	/**
@@ -138,7 +138,7 @@ public class Reservation {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "ID : " + this.id + " ,MidwayID : " + this.midwayID + " ,UserID : " + this.seatID + " ,Fare : "
-				+ this.fare + " ,TStamp : " + this.tstamp;
+		return "ID : " + this.id + " ,MidwayID : " + this.midwayID + " ,UserID : " + this.seatID + " ,FareID : "
+				+ this.fareID + " ,TStamp : " + this.tstamp;
 	}
 }

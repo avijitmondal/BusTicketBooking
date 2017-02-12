@@ -10,7 +10,7 @@
 		<property name="midwayID" column="MIDWAY_ID" type="integer" />
 		<property name="userID" column="USER_ID" type="integer" />
 		<property name="seatID" column="SEAT_ID" type="integer" />
-		<property name="fare" column="FARE" type="integer" />
+		<property name="fareID" column="FARE_ID" type="integer" />
 		<property name="tstamp" column="TSTAMP" type="timestamp" />
 	</class>
 </hibernate-mapping>

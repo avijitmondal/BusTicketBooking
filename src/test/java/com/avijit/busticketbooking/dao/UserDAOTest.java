@@ -27,8 +27,8 @@ import com.avijit.busticketbooking.model.User;
 public class UserDAOTest {
 
 	@Autowired
-	IUserDAO iUserDAO;
-	User user;
+	private IUserDAO iUserDAO;
+	private User user;
 
 	/**
 	 * @throws java.lang.Exception

@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.avijit.busticketbooking.model.Bus;
 
 /**
- * @author AVI
+ * @author avijit
  *
  */
 public interface IBusDAO {

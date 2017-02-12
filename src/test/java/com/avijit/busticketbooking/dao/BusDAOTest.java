@@ -19,7 +19,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.avijit.busticketbooking.model.Bus;
 
 /**
- * @author AVI
+ * @author avijit
  *
  */
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -27,8 +27,8 @@ import com.avijit.busticketbooking.model.Bus;
 public class BusDAOTest {
 
 	@Autowired
-	IBusDAO iBusDAO;
-	Bus bus;
+	private IBusDAO iBusDAO;
+	private Bus bus;
 
 	/**
 	 * @throws java.lang.Exception

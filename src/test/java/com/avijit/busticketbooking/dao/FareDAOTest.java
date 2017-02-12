@@ -28,8 +28,8 @@ import com.avijit.busticketbooking.model.Fare;
 public class FareDAOTest {
 
 	@Autowired
-	IFareDAO iFareDAO;
-	Fare fare;
+	private IFareDAO iFareDAO;
+	private Fare fare;
 
 	/**
 	 * @throws java.lang.Exception

@@ -26,8 +26,8 @@ import com.avijit.busticketbooking.model.Route;
 public class RouteDAOTest {
 	
 	@Autowired
-	IRouteDAO iRouteDAO;
-	Route route;
+	private IRouteDAO iRouteDAO;
+	private Route route;
 
 	/**
 	 * @throws java.lang.Exception

@@ -33,8 +33,8 @@ import com.avijit.busticketbooking.util.Constants.ReservationTime;
 public class ReservationDAOTest {
 
 	@Autowired
-	IReservationDAO iReservationDAO;
-	Reservation reservation;
+	private IReservationDAO iReservationDAO;
+	private Reservation reservation;
 	
 	/**
 	 * @throws java.lang.Exception
@@ -79,7 +79,7 @@ public class ReservationDAOTest {
 		long nowPlus10Minutes = now + (10L * 60L * 1000L);
 		Timestamp nowPlus10MinutesAsTimestamp = new Timestamp(nowPlus10Minutes);
 		reservation.setTstamp(nowPlus10MinutesAsTimestamp);
-		reservation.setFare(2);
+		reservation.setFareID(2);
 		
 		int result = iReservationDAO.addReservation(reservation);
 		assertNotEquals(-1, result);
@@ -121,7 +121,7 @@ public class ReservationDAOTest {
 		long nowPlus10Minutes = now + (10L * 60L * 1000L);
 		Timestamp nowMinus5MinutesAsTimestamp = new Timestamp(nowPlus10Minutes);
 		reservation.setTstamp(nowMinus5MinutesAsTimestamp);
-		reservation.setFare(2);
+		reservation.setFareID(2);
 		
 		boolean result = iReservationDAO.updateReservation(reservation);
 		assertNotEquals(false, result);

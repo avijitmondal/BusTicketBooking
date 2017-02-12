@@ -27,8 +27,8 @@ import com.avijit.busticketbooking.model.Stop;
 public class StopDAOTest {
 	
 	@Autowired
-	IStopDAO iStopDAO;
-	Stop stop;
+	private IStopDAO iStopDAO;
+	private Stop stop;
 
 	/**
 	 * @throws java.lang.Exception

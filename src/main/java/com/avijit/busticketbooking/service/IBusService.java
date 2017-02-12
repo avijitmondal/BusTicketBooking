@@ -3,8 +3,6 @@
  */
 package com.avijit.busticketbooking.service;
 
-import org.springframework.transaction.annotation.Transactional;
-
 import com.avijit.busticketbooking.model.Bus;
 
 /**
@@ -13,34 +11,34 @@ import com.avijit.busticketbooking.model.Bus;
  */
 public interface IBusService {
 	/**
+	 * Add new bus to database
 	 * 
 	 * @param bus
-	 * @return
+	 * @return bus id
 	 */
-	@Transactional
-	public boolean addBus(Bus bus);
+	public int addBus(Bus bus);
 
 	/**
+	 * Get a bus details
 	 * 
 	 * @param busID
 	 * @return
 	 */
-	@Transactional
 	public Bus getBus(int busID);
 
 	/**
+	 * Update a bus
 	 * 
 	 * @param bus
 	 * @return
 	 */
-	@Transactional
 	public boolean updateBus(Bus bus);
 
 	/**
+	 * Delete a bus
 	 * 
 	 * @param busID
 	 * @return
 	 */
-	@Transactional
 	public boolean deleteBus(int busID);
 }
