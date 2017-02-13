@@ -65,12 +65,12 @@ public class RouteDAO implements IRouteDAO {
 	 * (non-Javadoc)
 	 * 
 	 * @see
-	 * com.avijit.busreservation.dao.IRouteDAO#findRouteByOriginAndDestination(
+	 * com.avijit.busreservation.dao.IRouteDAO#findRoutesByOriginAndDestination(
 	 * java.lang.String, java.lang.String)
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
-	public List<Route> findRouteByOriginAndDestination(int origin, int destination) {
+	public List<Route> findRoutesByOriginAndDestination(int origin, int destination) {
 		logger.info("findRouteByOriginAndDestination");
 		List<Route> listRoute = (List<Route>) sessionFactory.getCurrentSession().createCriteria(Route.class)
 				.add(Restrictions.eq("origin", origin)).add(Restrictions.eq("destination", destination)).list();

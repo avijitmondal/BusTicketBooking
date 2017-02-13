@@ -76,10 +76,9 @@ public class BusService implements IBusService {
 	 */
 	@Override
 	public boolean deleteBus(int busID) {
-		logger.info("deleteFare");
 		boolean result = iBusDAO.deleteBus(busID);
 		if (result)
-			logger.info("deleteBus", "Fare " + busID + " deleted successfuly");
+			logger.info("deleteBus", "Bus " + busID + " deleted successfuly");
 		else
 			logger.error("deleteBus", "Error deleting " + busID);
 		return result;

@@ -3,12 +3,15 @@
  */
 package com.avijit.busticketbooking.dao;
 
+import static org.junit.Assert.assertNotEquals;
+
 import java.util.List;
 
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,10 +27,9 @@ import com.avijit.busticketbooking.model.Route;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml")
 public class RouteDAOTest {
-	
+
 	@Autowired
 	private IRouteDAO iRouteDAO;
-	private Route route;
 
 	/**
 	 * @throws java.lang.Exception
@@ -48,7 +50,6 @@ public class RouteDAOTest {
 	 */
 	@Before
 	public void setUp() throws Exception {
-		route = new Route();
 	}
 
 	/**
@@ -62,38 +63,52 @@ public class RouteDAOTest {
 	 * Test method for
 	 * {@link com.avijit.busticketbooking.dao.RouteDAO#findRoutesByOrigin(java.lang.String)}.
 	 */
+	@Ignore
 	@Test
 	public void testFindRoutesByOrigin() {
-		System.out.println("testFindRoutesByOrigin");
+		List<Route> listRoutes = iRouteDAO.findRoutesByOrigin(1);
+		assertNotEquals(null, listRoutes);
+		for (Route r : listRoutes)
+			System.out.println(r);
 	}
 
 	/**
 	 * Test method for
 	 * {@link com.avijit.busticketbooking.dao.RouteDAO#findRoutesByDestination(java.lang.String)}.
 	 */
+	@Ignore
 	@Test
 	public void testFindRoutesByDestination() {
-		System.out.println("testFindRoutesByDestination");
+		List<Route> listRoutes = iRouteDAO.findRoutesByDestination(1);
+		assertNotEquals(null, listRoutes);
+		for (Route r : listRoutes)
+			System.out.println(r);
 	}
 
 	/**
 	 * Test method for
 	 * {@link com.avijit.busticketbooking.dao.RouteDAO#findRouteByOriginAndDestination(java.lang.String, java.lang.String)}.
 	 */
+	@Ignore
 	@Test
-	public void testFindRouteByOriginAndDestination() {
-		System.out.println("testFindRouteByOriginAndDestination");
+	public void testFindRoutesByOriginAndDestination() {
+		List<Route> listRoutes = iRouteDAO.findRoutesByOriginAndDestination(1, 2);
+		assertNotEquals(null, listRoutes);
+		for (Route r : listRoutes)
+			System.out.println(r);
 	}
 
 	/**
 	 * Test method for
 	 * {@link com.avijit.busticketbooking.dao.RouteDAO#findAllRoutes()}.
 	 */
+	@Ignore
 	@Test
 	public void testFindAllRoutes() {
 		List<Route> list = iRouteDAO.findAllRoutes();
+		assertNotEquals(null, list);
 		for (Route r : list) {
-			System.out.println(r);	
+			System.out.println(r);
 		}
 	}
 
