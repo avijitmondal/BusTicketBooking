@@ -5,6 +5,8 @@ package com.avijit.busticketbooking.dao;
 
 import static org.junit.Assert.*;
 
+import java.util.List;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -104,6 +106,17 @@ public class StopDAOTest {
 	public void testDeleteStop() {
 		boolean result = iStopDAO.deleteStop(69);
 		assertEquals(true, result);
+	}
+	
+	/**
+	 * Test method for
+	 * {@link com.avijit.busticketbooking.dao.StopDAO#getAllStops()}.
+	 */
+	@Ignore
+	@Test
+	public void testGetAllStops() {
+		List<Stop> listStop = iStopDAO.getAllStops();
+		assertNotEquals(null, listStop);
 	}
 
 }

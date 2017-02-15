@@ -3,6 +3,8 @@
  */
 package com.avijit.busticketbooking.dao;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
@@ -86,6 +88,19 @@ public class StopDAO implements IStopDAO {
 
 		session.delete(stop);
 		return true;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.avijit.busticketbooking.dao.IStopDAO#getAllStops()
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public List<Stop> getAllStops() {
+		logger.info("getAllStops");
+		List<Stop> listStop = (List<Stop>) sessionFactory.getCurrentSession().createCriteria(Stop.class).list();
+		return listStop;
 	}
 
 }

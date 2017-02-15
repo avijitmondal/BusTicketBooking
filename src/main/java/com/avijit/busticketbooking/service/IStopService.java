@@ -3,6 +3,8 @@
  */
 package com.avijit.busticketbooking.service;
 
+import java.util.List;
+
 import com.avijit.busticketbooking.model.Stop;
 
 /**
@@ -42,4 +44,10 @@ public interface IStopService {
 	 * @return boolean
 	 */
 	public boolean deleteStop(int stopID);
+
+	/**
+	 * Get list of stops
+	 * 
+	 */
+	public List<Stop> getAllStops();
 }

@@ -3,6 +3,8 @@
  */
 package com.avijit.busticketbooking.dao;
 
+import java.util.List;
+
 import org.springframework.transaction.annotation.Transactional;
 
 import com.avijit.busticketbooking.model.Stop;
@@ -50,4 +52,10 @@ public interface IStopDAO {
 	 */
 	@Transactional
 	public boolean deleteStop(int stopID);
+
+	/**
+	 * Get list of stops
+	 * 
+	 */
+	public List<Stop> getAllStops();
 }

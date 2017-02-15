@@ -3,6 +3,8 @@
  */
 package com.avijit.busticketbooking.service;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -82,6 +84,21 @@ public class StopService implements IStopService {
 		else
 			logger.error("deleteStop", "Error deleting " + stopID);
 		return result;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.avijit.busticketbooking.service.IStopService#getAllStops()
+	 */
+	@Override
+	public List<Stop> getAllStops() {
+		List<Stop> listStop = iStopDAO.getAllStops();
+		if (listStop != null)
+			logger.info("getAllStops", "All Stop details successfuly retrived");
+		else
+			logger.error("getAllStops", "Error retriving stop");
+		return listStop;
 	}
 
 }
