@@ -84,4 +84,8 @@
 			<ref bean="sessionFactory" />
 		</constructor-arg>
 	</bean>
+
+	<bean id="iStopService" class="com.avijit.busticketbooking.service.StopService" />
+
+	<bean id="searchController" class="com.avijit.busticketbooking.controller.SearchController" />
 </beans>

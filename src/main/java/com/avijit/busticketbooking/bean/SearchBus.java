@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.avijit.busticketbooking.model;
+package com.avijit.busticketbooking.bean;
 
 /**
  * @author avijit

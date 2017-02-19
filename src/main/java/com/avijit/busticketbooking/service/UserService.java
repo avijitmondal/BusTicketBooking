@@ -65,7 +65,7 @@ public class UserService implements IUserService {
 		if (result)
 			logger.info("updateUser", "User " + user.getId() + " successfuly updated");
 		else
-			logger.error("updateUser", "Error updating " + user.getId());
+			logger.info("updateUser", "Error updating " + user.getId());
 		return result;
 	}
 
@@ -80,8 +80,18 @@ public class UserService implements IUserService {
 		if (result)
 			logger.info("deleteUser", "User " + userID + " deleted successfuly");
 		else
-			logger.error("deleteUser", "Error deleting " + userID);
+			logger.info("deleteUser", "Error deleting " + userID);
 		return result;
+	}
+
+	public boolean isUserExists(int userID) {
+		User user = iUserDAO.getUser(userID);
+		if (user != null) {
+			logger.info("isUserExists", "User found");
+			return true;
+		}
+		logger.info("isUserExists", "User not found");
+		return false;
 	}
 
 }

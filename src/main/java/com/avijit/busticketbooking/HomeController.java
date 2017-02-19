@@ -2,13 +2,15 @@ package com.avijit.busticketbooking;
 
 import java.util.Locale;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.avijit.busticketbooking.model.SearchBus;
+import com.avijit.busticketbooking.bean.SearchBus;
+import com.avijit.busticketbooking.controller.SearchController;
 
 /**
  * Handles requests for the application home page.
@@ -18,6 +20,9 @@ import com.avijit.busticketbooking.model.SearchBus;
  */
 @Controller
 public class HomeController {
+
+	@Autowired
+	private SearchController searchController;
 
 	/**
 	 * Simply selects the home view to render by returning its name.
