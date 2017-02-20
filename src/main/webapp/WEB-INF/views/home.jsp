@@ -50,20 +50,17 @@
 				</div>
 				<div class="panel panel-default">
 					<div class="panel-body">
-						<form action="<c:url value='/buses' />" class="form-horizontal" role="form" method="get" commandName="searchBus">
+						<form action="<c:url value='/buses' />" class="form-horizontal"
+							role="form" method="get" commandName="searchBus">
 							<fieldset>
 
 								<div class="form-group">
 									<label for="dtp_input1" class="col-md-3 control-label">From</label>
 									<div class="input-group  col-md-6">
-
 										<select name="source" class="form-control">
-											<!-- multiple="multiple" to display multiple options-->
-											<option>Lord Voldemort</option>
-											<option>Albus Dumbledore</option>
-											<option>Harry Potter</option>
-											<option>Ron Weasley</option>
-											<option>Severus Snape</option>
+											<c:forEach var="stop" items="${listStop}">
+												<option>${stop.name}</option>
+											</c:forEach>
 										</select>
 									</div>
 
@@ -73,12 +70,9 @@
 									<div class="input-group  col-md-6">
 
 										<select name="destination" class="form-control">
-											<!-- multiple="multiple" to display multiple options-->
-											<option>Lord Voldemort</option>
-											<option>Albus Dumbledore</option>
-											<option>Harry Potter</option>
-											<option>Ron Weasley</option>
-											<option>Severus Snape</option>
+											<c:forEach var="stop" items="${listStop}">
+												<option>${stop.name}</option>
+											</c:forEach>
 										</select>
 									</div>
 
@@ -90,8 +84,8 @@
 									<div class="input-group date form_date col-md-6" data-date=""
 										data-date-format="dd MM yyyy" data-link-field="dtp_input2"
 										data-link-format="yyyy-mm-dd">
-										<input name="date" class="form-control" size="16" type="text" value=""
-											readonly> <span class="input-group-addon"><span
+										<input name="date" class="form-control" size="16" type="text"
+											value="" readonly> <span class="input-group-addon"><span
 											class="glyphicon glyphicon-calendar"></span></span>
 									</div>
 									<input type="hidden" id="dtp_input2" value="" /><br />
@@ -102,8 +96,9 @@
 									<div class="input-group date form_time col-md-2" data-date=""
 										data-date-format="hh:ii" data-link-field="dtp_input3"
 										data-link-format="hh:ii">
-										<input name="fromTime" class="form-control" size="16" type="text" value=""
-											readonly> <span class="input-group-addon"><span
+										<input name="fromTime" class="form-control" size="16"
+											type="text" value="" readonly> <span
+											class="input-group-addon"><span
 											class="glyphicon glyphicon-time"></span></span>
 									</div>
 									<label for="dtp_input3" class="col-md-2 control-label">From
@@ -134,9 +129,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="container">
-					<p>
-						Copyright &copy; Bus Reservation System
-					</p>
+					<p>Copyright &copy; Bus Reservation System</p>
 				</div>
 
 			</div>
@@ -157,38 +150,38 @@
 	<script type="text/javascript"
 		src="<c:url value="/resources/resource/datetimepicker/locales/bootstrap-datetimepicker.uk.js" />"
 		charset="UTF-8"></script>
-<script type="text/javascript">
-    $('.form_datetime').datetimepicker({
-        //language:  'fr',
-        weekStart: 1,
-        todayBtn:  1,
-		autoclose: 1,
-		todayHighlight: 1,
-		startView: 2,
-		forceParse: 0,
-        showMeridian: 1
-    });
-	$('.form_date').datetimepicker({
-        language:  'fr',
-        weekStart: 1,
-        todayBtn:  1,
-		autoclose: 1,
-		todayHighlight: 1,
-		startView: 2,
-		minView: 2,
-		forceParse: 0
-    });
-	$('.form_time').datetimepicker({
-        language:  'fr',
-        weekStart: 1,
-        todayBtn:  1,
-		autoclose: 1,
-		todayHighlight: 1,
-		startView: 1,
-		minView: 0,
-		maxView: 1,
-		forceParse: 0
-    });
-</script>
+	<script type="text/javascript">
+		$('.form_datetime').datetimepicker({
+			//language:  'fr',
+			weekStart : 1,
+			todayBtn : 1,
+			autoclose : 1,
+			todayHighlight : 1,
+			startView : 2,
+			forceParse : 0,
+			showMeridian : 1
+		});
+		$('.form_date').datetimepicker({
+			language : 'fr',
+			weekStart : 1,
+			todayBtn : 1,
+			autoclose : 1,
+			todayHighlight : 1,
+			startView : 2,
+			minView : 2,
+			forceParse : 0
+		});
+		$('.form_time').datetimepicker({
+			language : 'fr',
+			weekStart : 1,
+			todayBtn : 1,
+			autoclose : 1,
+			todayHighlight : 1,
+			startView : 1,
+			minView : 0,
+			maxView : 1,
+			forceParse : 0
+		});
+	</script>
 </body>
 </html>

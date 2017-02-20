@@ -3,20 +3,31 @@
  */
 package com.avijit.busticketbooking.controller;
 
-import static org.junit.Assert.*;
+import java.util.List;
 
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import com.avijit.busticketbooking.model.Stop;
 
 /**
  * @author AVI
  *
  */
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = "file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml")
 public class SearchControllerTest {
 
+	@Autowired
+	private SearchController searchController;
+	
 	/**
 	 * @throws java.lang.Exception
 	 */
@@ -50,7 +61,10 @@ public class SearchControllerTest {
 	 */
 	@Test
 	public void testGetStops() {
-		fail("Not yet implemented");
+		List<Stop> stops =  searchController.getStops();
+		for(Stop s: stops){
+			System.out.println("Id : "+s.getId()+" ,Name : "+s.getName());
+		}
 	}
 
 }

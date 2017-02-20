@@ -57,5 +57,6 @@ public interface IStopDAO {
 	 * Get list of stops
 	 * 
 	 */
+	@Transactional
 	public List<Stop> getAllStops();
 }

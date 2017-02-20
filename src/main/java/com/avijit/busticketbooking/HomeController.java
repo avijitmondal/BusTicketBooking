@@ -1,5 +1,6 @@
 package com.avijit.busticketbooking;
 
+import java.util.List;
 import java.util.Locale;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.avijit.busticketbooking.bean.SearchBus;
 import com.avijit.busticketbooking.controller.SearchController;
+import com.avijit.busticketbooking.model.Stop;
 
 /**
  * Handles requests for the application home page.
@@ -33,7 +35,8 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
-
+		List<Stop> listStop = searchController.getStops();
+		model.addAttribute("listStop", listStop);
 		return "home";
 	}
 
