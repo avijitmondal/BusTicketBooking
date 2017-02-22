@@ -7,7 +7,7 @@ package com.avijit.busticketbooking.bean;
  * @author avijit
  *
  */
-public class SearchBus {
+public class SearchBean {
 	private String source;
 	private String destination;
 	private String date;
@@ -17,7 +17,7 @@ public class SearchBus {
 	/**
 	 * 
 	 */
-	public SearchBus() {
+	public SearchBean() {
 	}
 
 	/**
@@ -27,7 +27,7 @@ public class SearchBus {
 	 * @param fromTime
 	 * @param toTIme
 	 */
-	public SearchBus(String source, String destination, String date, String fromTime, String toTime) {
+	public SearchBean(String source, String destination, String date, String fromTime, String toTime) {
 		this.source = source;
 		this.destination = destination;
 		this.date = date;

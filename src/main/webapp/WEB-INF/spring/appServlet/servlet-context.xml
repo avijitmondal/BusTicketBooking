@@ -88,4 +88,7 @@
 	<bean id="iStopService" class="com.avijit.busticketbooking.service.StopService" />
 
 	<bean id="searchController" class="com.avijit.busticketbooking.controller.SearchController" />
+
+	<!-- Utility beans -->
+	<bean id="dateTime" class="com.avijit.busticketbooking.util.DateTime" />
 </beans>

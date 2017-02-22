@@ -51,15 +51,15 @@
 				<div class="panel panel-default">
 					<div class="panel-body">
 						<form action="<c:url value='/buses' />" class="form-horizontal"
-							role="form" method="get" commandName="searchBus">
+							role="form" method="post">
 							<fieldset>
 
 								<div class="form-group">
 									<label for="dtp_input1" class="col-md-3 control-label">From</label>
 									<div class="input-group  col-md-6">
-										<select name="source" class="form-control">
+										<select name="source" class="form-control" path="source">
 											<c:forEach var="stop" items="${listStop}">
-												<option>${stop.name}</option>
+												<option value="${stop.id}">${stop.name}</option>
 											</c:forEach>
 										</select>
 									</div>
@@ -69,9 +69,10 @@
 									<label for="dtp_input1" class="col-md-3 control-label">To</label>
 									<div class="input-group  col-md-6">
 
-										<select name="destination" class="form-control">
+										<select name="destination" class="form-control"
+											path="destination">
 											<c:forEach var="stop" items="${listStop}">
-												<option>${stop.name}</option>
+												<option value="${stop.id}">${stop.name}</option>
 											</c:forEach>
 										</select>
 									</div>
@@ -85,7 +86,8 @@
 										data-date-format="dd MM yyyy" data-link-field="dtp_input2"
 										data-link-format="yyyy-mm-dd">
 										<input name="date" class="form-control" size="16" type="text"
-											value="" readonly> <span class="input-group-addon"><span
+											value="" readonly path="date"> <span
+											class="input-group-addon"><span
 											class="glyphicon glyphicon-calendar"></span></span>
 									</div>
 									<input type="hidden" id="dtp_input2" value="" /><br />
@@ -97,7 +99,7 @@
 										data-date-format="hh:ii" data-link-field="dtp_input3"
 										data-link-format="hh:ii">
 										<input name="fromTime" class="form-control" size="16"
-											type="text" value="" readonly> <span
+											type="text" value="" readonly path="fromtime"> <span
 											class="input-group-addon"><span
 											class="glyphicon glyphicon-time"></span></span>
 									</div>
@@ -107,7 +109,8 @@
 										data-date-format="hh:ii" data-link-field="dtp_input3"
 										data-link-format="hh:ii">
 										<input class="form-control" size="16" type="text" value=""
-											readonly> <span class="input-group-addon"><span
+											readonly path="totime"> <span
+											class="input-group-addon"><span
 											class="glyphicon glyphicon-time"></span></span>
 									</div>
 									<input name="toTime" type="hidden" id="dtp_input3" value="" /><br />
